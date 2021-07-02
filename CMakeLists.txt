@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(eigen4rkt VERSION 3.3.90 LANGUAGES CXX)
+project(eigen4rkt VERSION 3.3.90.1 LANGUAGES CXX)
 
 include(ExternalProject)
 
