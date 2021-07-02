@@ -2,7 +2,17 @@ cmake_minimum_required(VERSION 3.0)
 
 project(eigen4rkt VERSION 3.3.90 LANGUAGES CXX)
 
-execute_process(COMMAND git submodule update --init --recursive
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+include(ExternalProject)
 
-add_subdirectory(eigen)
+ExternalProject_Add(eigen
+    PREFIX etc
+    GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
+    GIT_TAG bbfc4d54cd863676b3ae874e25dbe150fb6d575c
+    GIT_SHALLOW TRUE
+    GIT_PROGRESS TRUE
+    CMAKE_ARGS
+        -DCMAKE_GENERATOR=${CMAKE_GENERATOR}
+        -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+        -DEIGEN_BUILD_PKGCONFIG=${EIGEN_BUILD_PKGCONFIG})
