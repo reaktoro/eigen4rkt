@@ -7,7 +7,7 @@ include(ExternalProject)
 ExternalProject_Add(eigen
     PREFIX etc
     GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
-    GIT_TAG bbfc4d54cd863676b3ae874e25dbe150fb6d575c
+    GIT_TAG 1f4c0311cda3403999b702c996898af5707973a9
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
     CMAKE_ARGS
