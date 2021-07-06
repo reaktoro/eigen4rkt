@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(eigen4rkt VERSION 3.3.90.2 LANGUAGES CXX)
+project(eigen4rkt VERSION 3.3.90.3 LANGUAGES CXX)
 
 include(ExternalProject)
 
 ExternalProject_Add(eigen
     PREFIX etc
     GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
-    GIT_TAG 1f4c0311cda3403999b702c996898af5707973a9
+    GIT_TAG 7b35638ddb99a0298c5d3450de506a8e8e0203d3
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
     CMAKE_ARGS
